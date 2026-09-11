@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Recommender</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header class="app-header">
+      <h1>Music Recommender</h1>
+      <p class="subtitle">Select your genre, mood, and activity to discover tracks</p>
+    </header>
+
+    <main class="form-panel">
+
+      <div class="control-row">
+        <div class="select-group">
+          <label for="genre">Genre</label>
+          <select id="genre">
+            <option value="Pop">Pop</option>
+            <option value="Rock">Rock</option>
+            <option value="Hip-Hop">Hip-Hop</option>
+            <option value="EDM">EDM</option>
+            <option value="Chill">Chill</option>
+            <option value="Latin">Latin</option>
+            <option value="R&B">R&B</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Classical">Classical</option>
+          </select>
+        </div>
+
+        <div class="select-group">
+          <label for="mood">Mood</label>
+          <select id="mood">
+            <option value="Happy">Happy</option>
+            <option value="Sad">Sad</option>
+            <option value="Energetic">Energetic</option>
+            <option value="Calm">Calm</option>
+            <option value="Romantic">Romantic</option>
+            <option value="Dark">Dark</option>
+            <option value="Chill">Chill</option>
+            <option value="Motivated">Motivated</option>
+            <option value="Nostalgic">Nostalgic</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="activity-section">
+        <label class="section-label">Activity <span class="optional">(optional)</span></label>
+        <div class="chip-group" id="activity-chips">
+          <button type="button" class="chip active" data-val="">Any</button>
+          <button type="button" class="chip" data-val="workout">Workout</button>
+          <button type="button" class="chip" data-val="studying">Studying</button>
+          <button type="button" class="chip" data-val="commute">Commute</button>
+          <button type="button" class="chip" data-val="party">Party</button>
+          <button type="button" class="chip" data-val="sleep">Sleep</button>
+          <button type="button" class="chip" data-val="cooking">Cooking</button>
+          <button type="button" class="chip" data-val="driving">Driving</button>
+        </div>
+      </div>
+
+      <div class="sliders-section">
+        <div class="slider-group">
+          <div class="slider-row">
+            <label class="section-label" for="energy">Energy</label>
+            <span class="slider-value" id="energy-val">0.60</span>
+          </div>
+          <input type="range" id="energy" min="0" max="100" value="60" class="slider">
+          <div class="slider-hint"><span>Calm</span><span>Intense</span></div>
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-row">
+            <label class="section-label" for="valence">Positivity</label>
+            <span class="slider-value" id="valence-val">0.55</span>
+          </div>
+          <input type="range" id="valence" min="0" max="100" value="55" class="slider">
+          <div class="slider-hint"><span>Melancholic</span><span>Uplifting</span></div>
+        </div>
+      </div>
+
+      <div class="results-count-row">
+        <label for="count" class="count-label">Show</label>
+        <select id="count">
+          <option value="10">Top 10</option>
+          <option value="50" selected>Top 50</option>
+          <option value="100">Top 100</option>
+          <option value="all">All matches</option>
+        </select>
+      </div>
+
+      <button class="recommend-btn" id="recBtn">
+        ♪ Get Recommendations
+      </button>
+
+    </main>
+
+    <section id="results" aria-live="polite"></section>
+
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
