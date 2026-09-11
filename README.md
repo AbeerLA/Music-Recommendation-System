@@ -103,9 +103,6 @@ Live on **[Vercel](https://music-recommendation-system-qybp69ulz-abeerlas-projec
 
 This is a fully static site — no server-side code, no environment variables, no build step — so it also deploys cleanly to GitHub Pages, Netlify, or Cloudflare Pages if you want an alternate or custom-domain host.
 
-## License
-
-Add your license here (e.g. MIT).
 
 ## Acknowledgments
 
